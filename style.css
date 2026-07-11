@@ -330,3 +330,46 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.playlist-item {
+  background: #1e1e1e;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  border-left: 4px solid transparent;
+}
+
+.playlist-item:hover {
+  background: #2a2a2a;
+  border-left-color: #f1c40f;
+}
+
+.playlist-item:active {
+  background: #333;
+  transform: scale(0.99);
+}
+
+.playlist-item .info {
+  flex: 1;
+  pointer-events: none;
+}
+
+.playlist-item .remove-btn {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.2s;
+  pointer-events: auto;
+}
+
+.playlist-item .remove-btn:hover {
+  background: rgba(255,107,107,0.2);
+}
