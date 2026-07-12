@@ -40,11 +40,24 @@ export function initPlayer() {
     isPlaying = false;
     playBtn.textContent = '▶';
   });
+function showToast(text) {
+  const old = document.querySelector('.toast');
+  if (old) old.remove();
 
+  const toast = document.createElement('div');
+  toast.className = 'toast show';
+  toast.textContent = text;
+  document.body.appendChild(toast);
+
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 300);
+  }, 2000);
+}
   addBtn.addEventListener('click', () => {
     if (currentEpisode) {
       addToPlaylist(currentEpisode);
-      alert('Добавлено в плейлист!');
+      showToast('✅ Добавлено в плейлист');
     }
   });
 

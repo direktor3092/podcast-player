@@ -373,3 +373,21 @@ body {
 .playlist-item .remove-btn:hover {
   background: rgba(255,107,107,0.2);
 }
+.toast {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 9999;
+}
+.toast.show {
+  opacity: 1;
+}
