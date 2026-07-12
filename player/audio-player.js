@@ -14,6 +14,21 @@ const audio = new Audio();
 let currentEpisode = null;
 let isPlaying = false;
 
+export function showToast(text) {
+  const old = document.querySelector('.toast');
+  if (old) old.remove();
+
+  const toast = document.createElement('div');
+  toast.className = 'toast show';
+  toast.textContent = text;
+  document.body.appendChild(toast);
+
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 300);
+  }, 2000);
+}
+
 export function initPlayer() {
   playBtn.addEventListener('click', togglePlay);
 
@@ -40,20 +55,7 @@ export function initPlayer() {
     isPlaying = false;
     playBtn.textContent = '▶';
   });
-function showToast(text) {
-  const old = document.querySelector('.toast');
-  if (old) old.remove();
-
-  const toast = document.createElement('div');
-  toast.className = 'toast show';
-  toast.textContent = text;
-  document.body.appendChild(toast);
-
-  setTimeout(() => {
-    toast.classList.remove('show');
-    setTimeout(() => toast.remove(), 300);
-  }, 2000);
-}
+  
   addBtn.addEventListener('click', () => {
     if (currentEpisode) {
       addToPlaylist(currentEpisode);
