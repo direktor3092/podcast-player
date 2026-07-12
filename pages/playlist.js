@@ -1,6 +1,7 @@
 import { getPlaylist, removeFromPlaylist } from '../store/storage.js';
 import { formatTime } from '../utils/format-time.js';
 import { playEpisode } from '../player/audio-player.js';
+import { showToast } from '../player/audio-player.js';
 
 const playlistContent = document.getElementById('playlist-content');
 
@@ -41,6 +42,7 @@ export function renderPlaylist() {
       const id = btn.dataset.id;
       removeFromPlaylist(id);
       renderPlaylist();
+      showToast('🗑️ Удалено из плейлиста');
     });
   });
 }
