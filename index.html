@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Podcast Player</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎙️</text></svg>">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>🎙️ Podcast Player</h1>
+      <nav class="nav">
+        <button class="nav-btn active" data-page="landing">🏠 Лента</button>
+        <button class="nav-btn" data-page="playlist">📋 Плейлист</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section id="page-landing" class="page active">
+      <div class="container">
+        <div class="search-wrapper">
+          <input type="text" id="search-input" placeholder="Поиск подкастов..." />
+          <span class="loading-indicator" id="loading-indicator">⏳</span>
+        </div>
+        <div id="podcast-grid" class="podcast-grid"></div>
+        <button id="load-more" class="load-more-btn">Загрузить ещё</button>
+      </div>
+    </section>
+    <section id="page-details" class="page">
+      <div class="container">
+        <button id="back-to-landing" class="back-btn">← Назад к ленте</button>
+        <div id="details-content"></div>
+      </div>
+    </section>
+    <section id="page-playlist" class="page">
+      <div class="container">
+        <h2>📋 Мой плейлист</h2>
+        <div id="playlist-content"></div>
+      </div>
+    </section>
+  </main>
+  <footer class="player-bar" id="player-bar">
+    <div class="player-controls">
+      <button id="play-btn" class="play-btn">▶</button>
+      <span class="time-current" id="time-current">0:00</span>
+      <div class="progress-wrapper">
+        <div class="progress-track" id="progress-track">
+          <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+      <span class="time-total" id="time-total">0:00</span>
+      <button id="add-to-playlist-btn" class="add-btn" title="Добавить в плейлист">➕</button>
+    </div>
+    <div class="player-info">
+      <span id="current-episode-title">Не выбрано</span>
+      <span id="current-podcast-title"></span>
+    </div>
+  </footer>
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>
