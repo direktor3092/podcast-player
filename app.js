@@ -39,5 +39,3 @@ initLanding();
 initPlayer();
 initPlaylist();
 navigateTo('landing');
-
-console.log('✅ App initialized');
